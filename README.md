@@ -4,7 +4,7 @@ Este repositorio contiene un proyecto para evaluar y practicar los conceptos de 
 
 ### Estudiantes
 - **Nombre del estudiante 1**: Carlos Armando Ordóñez Cruz - 00072122
-- **Nombre del estudiante 2**: José Alfredo Rodríguez Rodríguez - Carnet aquí
+- **Nombre del estudiante 2**: José Alfredo Rodríguez Rodríguez - 00055421
 - Sección: 01
 ---
 

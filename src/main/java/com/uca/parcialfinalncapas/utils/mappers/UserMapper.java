@@ -9,21 +9,21 @@ import java.util.stream.Collectors;
 
 public class UserMapper {
 
-    public static User toEntityCreate(UserCreateRequest userRequest) {
+    public static User toEntityCreate(User userRequest) {
         return User.builder()
                 .nombre(userRequest.getNombre())
                 .correo(userRequest.getCorreo())
                 .password(userRequest.getPassword())
-                .nombreRol(userRequest.getNombreRol())
+                .rol(userRequest.getRol())
                 .build();
     }
 
-    public static User toEntityUpdate(UserUpdateRequest userUpdate) {
+    public static User toEntityUpdate(User userUpdate) {
         return User.builder()
                 .id(userUpdate.getId())
                 .nombre(userUpdate.getNombre())
                 .password(userUpdate.getPassword())
-                .nombreRol(userUpdate.getNombreRol())
+                .rol(userUpdate.getRol())
                 .build();
     }
 
@@ -32,7 +32,7 @@ public class UserMapper {
                 .idUsuario(user.getId())
                 .nombre(user.getNombre())
                 .correo(user.getCorreo())
-                .nombreRol(user.getNombreRol())
+                .rol(user.getRol())
                 .build();
     }
 

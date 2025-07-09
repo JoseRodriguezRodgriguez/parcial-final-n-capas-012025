@@ -1,5 +1,6 @@
 package com.uca.parcialfinalncapas.dto.response;
 
+import com.uca.parcialfinalncapas.utils.enums.Rol;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,5 +10,5 @@ public class UserResponse {
     private Long idUsuario;
     private String nombre;
     private String correo;
-    private String nombreRol;
+    private Rol rol;
 }

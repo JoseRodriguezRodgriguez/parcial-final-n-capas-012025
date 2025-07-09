@@ -44,5 +44,4 @@ public interface UserService {
      */
     List<UserResponse> findAll();
 
-
 }

@@ -12,4 +12,5 @@ public enum Rol {
     Rol(String value) {
         this.value = value;
     }
+
 }

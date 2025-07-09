@@ -40,7 +40,7 @@ public class TicketServiceImpl implements TicketService {
         var usuarioSoporte = userRepository.findByCorreo(ticket.getCorreoSoporte())
                 .orElseThrow(() -> new UserNotFoundException("Usuario asignado no encontrado con correo: " + ticket.getCorreoSoporte()));
 
-        if (!usuarioSoporte.getNombreRol().equals(Rol.TECH.getValue())) {
+        if (usuarioSoporte.getRol() != Rol.TECH) {          // ó .equals(Rol.TECH)
             throw new BadTicketRequestException("El usuario asignado no es un técnico de soporte");
         }
 
@@ -61,8 +61,9 @@ public class TicketServiceImpl implements TicketService {
         var usuarioSoporte = userRepository.findByCorreo(ticket.getCorreoSoporte())
                 .orElseThrow(() -> new UserNotFoundException("Usuario asignado no encontrado con correo: " + ticket.getCorreoSoporte()));
 
-        if (!usuarioSoporte.getNombreRol().equals(Rol.TECH.getValue())) {
-            throw new BadTicketRequestException("El usuario asignado no es un técnico de soporte");
+        if (usuarioSoporte.getRol() != Rol.TECH) {    
+            throw new BadTicketRequestException(
+                    "El usuario asignado no es un técnico de soporte");
         }
 
         var ticketGuardado = ticketRepository.save(TicketMapper.toEntityUpdate(ticket, usuarioSoporte.getId(), ticketExistente));
